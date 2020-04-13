@@ -17,26 +17,40 @@ def atalakitszambolszo(szam):
         return "ollo"
 def kiertekeles(eredmeny):
     if eredmeny == -1:
-        return "vesztettel"
+        return "kettes gep nyert"
     if eredmeny == 1:
-        return "nyertel"
+        return "egyes gep nyert"
     if eredmeny == -2:
-        return "nyertel"
+        return "egyes gep nyert"
     if eredmeny == 2:
-        return "vesztettel"
+        return "kettes gep nyert"
     if eredmeny == 0:
         return "dontetlen"
 
-lista1 = ["ko", "papir", "ollo"]
-lista2 = ["ko", "papir", "ollo"]
-
-gep1valasz = random.choice(lista1)
-print ("Elsőgép: "+gep1valasz)
-gep2valasz = random.choice(lista2)
-print ("Masikgép: "+gep2valasz)
-gepvalasz1 = atalakitszobolszam(gep1valasz)
-gepvalasz2 = atalakitszobolszam(gep2valasz)
-vegeredmeny = (gepvalasz1 - gepvalasz2)
-print (vegeredmeny)
-eredmeny = vegeredmeny
-print (kiertekeles(eredmeny))
+lista = ["ko", "papir", "ollo"]
+x = 0
+y = 0
+z = 0
+for i in range(100):
+    gep1valasz = random.choice(lista)
+    print ("Elsőgép: "+gep1valasz)
+    gep2valasz = random.choice(lista)
+    print ("Masikgép: "+gep2valasz)
+    gepvalasz1 = atalakitszobolszam(gep1valasz)
+    gepvalasz2 = atalakitszobolszam(gep2valasz)
+    eredmeny = (gepvalasz1 - gepvalasz2)
+    print (eredmeny)
+    if eredmeny == -1:
+        y = y + 1
+    if eredmeny == 1:
+        x = x + 1
+    if eredmeny == -2:
+        x = x + 1
+    if eredmeny == 2:
+        y = y + 1
+    if eredmeny == 0:
+        z = z + 1
+    print (kiertekeles(eredmeny))
+print (x)
+print (y)
+print (z)
