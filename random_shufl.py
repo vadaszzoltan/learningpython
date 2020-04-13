@@ -15,6 +15,17 @@ def atalakitszambolszo(szam):
         return "papir"
     if szam == 3:
         return "ollo"
+def kiertekeles(eredmeny):
+    if eredmeny == -1:
+        return "vesztettel"
+    if eredmeny == 1:
+        return "nyertel"
+    if eredmeny == -2:
+        return "nyertel"
+    if eredmeny == 2:
+        return "vesztettel"
+    if eredmeny == 0:
+        return "dontetlen"
 
 lista = ["ko", "papir", "ollo"]
 
@@ -23,5 +34,7 @@ jatekosvalasz = atalakitszobolszam(jatekos)
 gep = random.choice(lista)
 print ("Gepvalasz:"+gep)
 gepvalasz = atalakitszobolszam(gep)
-print (jatekosvalasz - gepvalasz)
-
+vegeredmeny = (jatekosvalasz - gepvalasz)
+print (vegeredmeny)
+eredmeny = vegeredmeny
+print (kiertekeles(eredmeny))
